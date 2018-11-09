@@ -6,14 +6,14 @@ import java.util.List;
 public class Order {
 	
 	private String invoiceNumber;
-	private String customerEmail;
+	private String customer;
 	private String status;
 	private List<Burger> burgers = new ArrayList<Burger>();
 	
 
-	public Order(String invoiceNumber, String customerEmail, String status, ArrayList<Burger> burgers) {
+	public Order(String invoiceNumber, String customer, String status, List<Burger> burgers) {
 		this.invoiceNumber = invoiceNumber;
-		this.customerEmail = customerEmail;
+		this.customer = customer;
 		this.status = status;
 		this.burgers = burgers;
 	}
@@ -29,13 +29,13 @@ public class Order {
 	}
 
 
-	public String getCustomerEmail() {
-		return customerEmail;
+	public String getCustomer() {
+		return customer;
 	}
 
 
-	public void setCustomerEmail(String customerEmail) {
-		this.customerEmail = customerEmail;
+	public void setCustomer(String customerEmail) {
+		this.customer = customerEmail;
 	}
 
 

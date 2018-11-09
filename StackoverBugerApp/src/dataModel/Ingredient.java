@@ -5,14 +5,20 @@ public class Ingredient {
 	private String name;
 	private String category;
 	private int quantity;
+	private double price;
 	
-	public Ingredient(String name, String category, int quantity) {
+	public Ingredient(String name, int quantity) {
 		this.name = name;
-		this.category = category;
+		//this.category = category;
 		this.quantity = quantity;
 	}
 	
-	
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public double getPrice() {
+		return this.price;
+	}
 	public String getName() {
 		return name;
 	}
@@ -42,6 +48,7 @@ public class Ingredient {
 		this.quantity = quantity;
 	}
 
+	
 
 
 
