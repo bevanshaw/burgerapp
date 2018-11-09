@@ -26,7 +26,7 @@ public class Connector {
 	OkHttpClient client1 = new OkHttpClient();
 	public static final MediaType JSON = MediaType.get("application/json; charset=utf-8");
 	Map<String, Order> orderMap = new HashMap<String, Order>();
-	Map<String, Ingredient> ingredentMap = new HashMap<String, Ingredient>();
+	Map<String, Ingredient> ingredientMap = new HashMap<String, Ingredient>();
 
 	public String get(String jsonUrl) throws IOException{
 		Request request = new Request.Builder()
@@ -38,7 +38,7 @@ public class Connector {
 		}
 	}
 	
-	public List<Ingredient> getIngredients() throws IOException, JSONException{
+	public Map<String, Ingredient> getIngredients() throws IOException, JSONException{
 		String ingredientsUrl = "https://stackover-burger.firebaseio.com/ingredient.json";
 		
 		String ingredientsJson = this.get(ingredientsUrl);
@@ -52,15 +52,15 @@ public class Connector {
 			JSONObject ingredientObj = obj.getJSONObject(ingredientName);
 			int quantity = ingredientObj.getInt("quantity");
 			double price = ingredientObj.getDouble("price");
-			String category = ingredientObj.getString("catagory");
-			
-			Ingredient i = new Ingredient(ingredientName, quantity);
-			
-			
+			String category = ingredientObj.getString("catagory");		
+			Ingredient i = new Ingredient(ingredientName, quantity);	
+			i.setPrice(price);
+			i.setCategory(category);
+			ingredientMap.put(ingredientName, i);
 		}
 		
 
-		return null;
+		return ingredientMap;
 	}
 	
 
@@ -191,9 +191,11 @@ public class Connector {
 				"";
 
 		Connector connector = new Connector();
+		
+		connector.getIngredients();
 		//connector.put("https://stackover-burger.firebaseio.com/ingredient.json", jsonFile);
 		
-		connector.completeOrder("order1");
+		//connector.completeOrder("order1");
 //		System.out.println(connector.getIngredients());
 		System.out.println(connector.getOrders());
 //		System.out.println(connector.getTextData());
