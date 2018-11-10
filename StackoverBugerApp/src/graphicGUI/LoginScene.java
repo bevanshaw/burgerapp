@@ -64,8 +64,10 @@ public class LoginScene extends Application{
 		//create condition to choose ManagerScene or WorkerScene
 		@Override
 		public void handle (ActionEvent event) {
-			ManagerScene ManagerScene = new ManagerScene();
-			ManagerScene.CallthisMethod();
+			ManagerScene managerScene = new ManagerScene();
+			//call the method from another class
+			//windows.setScene(managerScene.CallthisMethod());
+			managerScene.CallthisMethod();
 		}
 	});
 	
