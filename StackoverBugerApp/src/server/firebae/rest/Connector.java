@@ -55,8 +55,10 @@ public class Connector {
 
 	//get the order invoiceNum to update the order
 	public void completeOrder(String orderInv)throws IOException {
-		
-		String modifyTime = TimeToISO.format(new Date());
+		 Date date= new Date();
+		 
+		long time = date.getTime();
+		long modifyTime = time;
 		String jsonFile = "{ \"modifyTime\": \""+modifyTime+"\",\n" + 
 				"\"status\": \"complete\"}";
 		String url = "https://stackover-burger.firebaseio.com/order/"+orderInv+".json?";
