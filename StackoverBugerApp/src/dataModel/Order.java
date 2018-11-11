@@ -1,5 +1,6 @@
 package dataModel;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,7 +10,18 @@ public class Order {
 	private String customer;
 	private String status;
 	private List<Burger> burgers = new ArrayList<Burger>();
+	private Timestamp createTime;
 	
+
+	public Timestamp getCreateTime() {
+		return createTime;
+	}
+
+
+	public void setCreateTime(Timestamp createTime) {
+		this.createTime = createTime;
+	}
+
 
 	public Order(String invoiceNumber, String customer, String status, List<Burger> burgers) {
 		this.invoiceNumber = invoiceNumber;
