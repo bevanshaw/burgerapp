@@ -29,7 +29,7 @@ public class LoginScene extends Application{
 	public static void main (String [] args) {
 		launch();
 		ManagerScene ManagerGUI = new ManagerScene();
-		ManagerGUI.CallthisMethod();
+		ManagerGUI.callManagerScene();
 	}
 
 	@Override
@@ -93,7 +93,7 @@ public class LoginScene extends Application{
 			
 			if(type.equals("manager")) {
 				
-				managerScene.CallthisMethod();
+				managerScene.callManagerScene();
 				
 			}else if(type.equals("worker")) {
 				

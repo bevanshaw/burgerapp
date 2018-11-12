@@ -15,8 +15,9 @@ import javafx.scene.text.Text;
 public class ManagerScene {
 
 	
-public void CallthisMethod() {
-	System.out.println("logged in");
+public void callManagerScene() {
+	
+	System.out.println("Manager logged in");
 	
 }
 

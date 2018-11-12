@@ -118,6 +118,13 @@ public class Connector {
 		//Intialise empty String.
 		String type = "";
 		
+		
+		//Making sure email contains @ so split works and Json Object created correctly.
+		if(!(email.contains("@"))) {
+			
+			return type;
+		}
+		
 		//Split String into Array
 		String[] key = email.split("@");
 		
@@ -126,24 +133,27 @@ public class Connector {
 		
 		//Where to go in the database.
 		String url = "https://stackover-burger.firebaseio.com/staff/"+staff+"/.json";
-		System.out.println("staff "+ staff);
+		System.out.println("staff = "+ staff);
 		
 		//Getting a json string from the right part of the database.
 		String json= OkImp.get(url);
 			
 		//New JSONObject created from the String.
+		//Checking 123 is first char in the String json (123 is a curly bracket). 
+		System.out.println((int)json.trim().charAt(0));
+		
 		JSONObject staffObject = new JSONObject(json);
 		
 		String realPassword = staffObject.getString("password");
-		System.out.println("realP "+realPassword);
+		System.out.println("realP = "+realPassword);
 		String realEmail = staffObject.getString("email");
-		System.out.println("realE "+realEmail);
+		System.out.println("realE = "+realEmail);
 	
 			//if the password and email match then it is a staff member
 			if(realPassword.equals(password) && realEmail.equals(email)) {
 				type = staffObject.getString("type");
 		
-				System.out.println("return "+type);
+				System.out.println("return = "+type);
 			}
 
 		
