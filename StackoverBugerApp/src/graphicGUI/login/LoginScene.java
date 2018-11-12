@@ -1,5 +1,9 @@
 package graphicGUI.login;
 
+import java.io.IOException;
+
+import org.json.JSONException;
+
 import graphicGUI.manager.ManagerScene;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -17,6 +21,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import server.firebae.rest.Connector;
 
 public class LoginScene extends Application{
 	Stage windows;
@@ -59,6 +64,7 @@ public class LoginScene extends Application{
 	Button logingBtn=new Button ("Login");
 	grid.add(logingBtn,1,3);
 	
+	
 	//set the condition or root of this button
 	logingBtn.setOnAction(new EventHandler<ActionEvent>() {
 		
@@ -67,6 +73,33 @@ public class LoginScene extends Application{
 		public void handle (ActionEvent event) {
 			ManagerScene managerScene = new ManagerScene();
 			//call the method from another class
+			
+			String password = pwBox.getText();
+			String email = txtUser.getText();
+			
+			Connector loginConnector = new Connector();
+			
+			String type = "";
+					
+			try {
+				type = loginConnector.loginType(password, email);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			if(type.equals("manager")) {
+				
+			}else if(type.equals("worker")) {
+				
+				
+			} else {
+				type = "This email: "+email+ " and password: "+password+ " is not a current staff member";
+			}
+			
 			//windows.setScene(managerScene.CallthisMethod());
 			managerScene.CallthisMethod();
 		}

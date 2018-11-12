@@ -141,9 +141,7 @@ public class Connector {
 				type = staffObject.getString("type");
 		
 			}
-//			}else {
-//				type = "This email: "+email+ " and password: "+password+ " is not a current staff member";
-//			}
+
 		
 		return type;
 		
