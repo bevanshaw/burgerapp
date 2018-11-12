@@ -21,7 +21,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import server.firebae.rest.Connector;
 
-public class Login implements Initializable{
+public class LoginController implements Initializable{
 
 	@FXML
 	private Button loginBtn;

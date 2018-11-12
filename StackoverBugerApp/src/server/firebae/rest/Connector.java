@@ -120,7 +120,7 @@ public class Connector {
 		
 		
 		//Making sure email contains @ so split works and Json Object created correctly.
-		if(!(email.contains("@"))) {
+		if(!(email.contains("@")) || email == null || password == null) {
 			
 			return type;
 		}
