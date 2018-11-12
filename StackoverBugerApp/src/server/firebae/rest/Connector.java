@@ -113,7 +113,41 @@ public class Connector {
 		return orderMap;
 	}
 		
+	public String loginType (String password, String email) throws IOException, JSONException{
+		
+		//Intialise empty String.
+		String type = "";
+		
+		//Split String into Array
+		String[] key = email.split("@");
+		
+		//Get unique key from first part of email.
+		String staff = key[0];
+		
+		//Where to go in the database.
+		String url = "https://stackover-burger.firebaseio.com/staff/"+staff+"/.json";
+		
+		//Getting a json string from the right part of the database.
+		String json= OkImp.get(url);
+			
+		//New JSONObject created from the String.
+		JSONObject staffObject = new JSONObject(json);
+		
+		String realPassword = staffObject.getString("password");
+		String realEmail = staffObject.getString("email");
 	
+			//if the password and email match then it is a staff member
+			if(realPassword.equals(password) && realEmail.equals(email)) {
+				type = staffObject.getString("type");
+		
+			}
+//			}else {
+//				type = "This email: "+email+ " and password: "+password+ " is not a current staff member";
+//			}
+		
+		return type;
+		
+	}
 	
 
 	public static void main(String[] args) throws IOException, JSONException {
