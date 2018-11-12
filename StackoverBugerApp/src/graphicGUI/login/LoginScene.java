@@ -1,5 +1,6 @@
-package graphicGUI;
+package graphicGUI.login;
 
+import graphicGUI.manager.ManagerScene;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

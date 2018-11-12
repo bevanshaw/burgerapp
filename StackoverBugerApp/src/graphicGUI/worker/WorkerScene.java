@@ -1,4 +1,4 @@
-package graphicGUI;
+package graphicGUI.worker;
 
 public class WorkerScene {
 
