@@ -16,7 +16,7 @@ public class ManagerScene {
 
 	
 public void CallthisMethod() {
-	
+	System.out.println("logged in");
 	
 }
 

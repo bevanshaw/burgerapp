@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="okhttp-3.11.0.jar"/>
 	<classpathentry kind="lib" path="okio-2.1.0.jar"/>
 	<classpathentry kind="lib" path="json-20090211.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

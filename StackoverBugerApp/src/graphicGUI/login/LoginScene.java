@@ -93,6 +93,8 @@ public class LoginScene extends Application{
 			
 			if(type.equals("manager")) {
 				
+				managerScene.CallthisMethod();
+				
 			}else if(type.equals("worker")) {
 				
 				
@@ -101,7 +103,7 @@ public class LoginScene extends Application{
 			}
 			
 			//windows.setScene(managerScene.CallthisMethod());
-			managerScene.CallthisMethod();
+			
 		}
 	});
 	

@@ -126,6 +126,7 @@ public class Connector {
 		
 		//Where to go in the database.
 		String url = "https://stackover-burger.firebaseio.com/staff/"+staff+"/.json";
+		System.out.println("staff "+ staff);
 		
 		//Getting a json string from the right part of the database.
 		String json= OkImp.get(url);
@@ -134,12 +135,15 @@ public class Connector {
 		JSONObject staffObject = new JSONObject(json);
 		
 		String realPassword = staffObject.getString("password");
+		System.out.println("realP "+realPassword);
 		String realEmail = staffObject.getString("email");
+		System.out.println("realE "+realEmail);
 	
 			//if the password and email match then it is a staff member
 			if(realPassword.equals(password) && realEmail.equals(email)) {
 				type = staffObject.getString("type");
 		
+				System.out.println("return "+type);
 			}
 
 		
