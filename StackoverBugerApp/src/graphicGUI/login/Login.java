@@ -31,7 +31,7 @@ public class Login implements Initializable{
 
 	@FXML
 	private PasswordField userPassword;
-	
+
 	@FXML
 	private Label respondText;
 
@@ -42,10 +42,10 @@ public class Login implements Initializable{
 
 		//To call method from ManagerScene class create ManagerScene object
 		ManagerScene managerScene = new ManagerScene();
-		
+
 		//To call method from WorkerScene class create WorkerScene object
 		WorkerScene workerScene = new WorkerScene();
-		
+
 
 		String password = userPassword.getText();
 		System.out.println("pass "+password);
@@ -67,59 +67,36 @@ public class Login implements Initializable{
 		}
 
 		if(type.equals("manager")) {
-			
+
 			respondText.setText("");
-			
+
 			managerScene.callManagerScene();
 
 		}else if(type.equals("worker")) {
-			
+
 			respondText.setText("");
-			
+
 			workerScene.callWorkerScene();
 
 		} else if(type.equals("")) {
-			
+
 			respondText.setText("Invalid email and password combination.");
 			respondText.setVisible(true);
-			
+
 		}
 
 		//windows.setScene(managerScene.CallthisMethod());
-
-		//			}
-		//		});
 
 	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }
 
-//	@FXML
-//    private Button exitBtn ;
-//
-//    @FXML
-//    private Button openBtn ;
-//
-//    public void initialize() {
-//        // initialization here, if needed...
-//    }
-//
-//    @FXML
-//    private void handleButtonClick(ActionEvent event) {
-//        // I really don't recommend using a single handler like this,
-//        // but it will work
-//        if (event.getSource() == exitBtn) {
-//            exitBtn.getScene().getWindow().hide();
-//        } else if (event.getSource() == openBtn) {
-//            // do open action...
-//        }
-//        // etc...
-//    }
+
 
 
 
