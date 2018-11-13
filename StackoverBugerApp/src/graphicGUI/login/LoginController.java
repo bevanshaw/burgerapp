@@ -275,53 +275,53 @@ public class LoginController implements Initializable{
 
 	@FXML
 	public void handleAddIngredientsButtonClick(ActionEvent event) throws IOException, JSONException {
-		
+
 		//Getting checkBoxMap in field ready for getting keys of ingredients in database.
 		populateCheckBoxMap();
-		
+
 		populateLabelQMap();
-		
+
 		//Get current invetory out of database into a map.
 		Connector connector = new Connector();
 		HashMap<String, Ingredient> currentInventory = (HashMap<String, Ingredient>) connector.getIngredients();
-		
+
 		Iterator iterator= checkBoxMap.entrySet().iterator();
-	    while (iterator.hasNext()) {
-	        Map.Entry pair = (Map.Entry)iterator.next();
-	        CheckBox checkBox = (CheckBox) pair.getKey();	
-	        String ingredient = (String) pair.getValue();
-	       
-	        if(checkBox.isSelected()) {
-	        	
-	        	//Getting right Ingredient object from database map.
-	        	Ingredient ingredAddQty = currentInventory.get(ingredient);
-	        	//Getting current quantity value inside Ingredient Object.
-	        	int current = ingredAddQty.getQuantity();
-	        	//Getting String of numbers to add and converting to an int. 
-	        	//NOTE: Check input on this textfield can only be numbers.
-	        	String qtyText = quantityText.getText();
-	        	
-	        	System.out.println(qtyText);
-	       
-	        	int addQty = Integer.parseInt(qtyText);	
-	        	
-	        	int increaseQTY = current + addQty;
-	        	
-	        	String nameIngredient = ingredAddQty.getName();
-	        	
-	        	connector.updateIngredient(nameIngredient, increaseQTY);
-	        	
-	        	
-	        	//For updating associated label on FXML file.
-	        	String updateLabelQ = Integer.toString(increaseQTY);
-	        	System.out.println("You got to here "+updateLabelQ);//
-	        	
-	        	//getting right label from map and updating the visible text (in this case a String number)
-	        	labelMap.get(nameIngredient).setText(updateLabelQ);;
-	        }
-	        
-	        iterator.remove(); // avoids a ConcurrentModificationException
-	    }
+		while (iterator.hasNext()) {
+			Map.Entry pair = (Map.Entry)iterator.next();
+			CheckBox checkBox = (CheckBox) pair.getKey();	
+			String ingredient = (String) pair.getValue();
+
+			if(checkBox.isSelected()) {
+
+				//Getting right Ingredient object from database map.
+				Ingredient ingredAddQty = currentInventory.get(ingredient);
+				//Getting current quantity value inside Ingredient Object.
+				int current = ingredAddQty.getQuantity();
+				//Getting String of numbers to add and converting to an int. 
+				//NOTE: Check input on this textfield can only be numbers.
+				String qtyText = quantityText.getText();
+
+				System.out.println(qtyText);
+
+				int addQty = Integer.parseInt(qtyText);	
+
+				int increaseQTY = current + addQty;
+
+				String nameIngredient = ingredAddQty.getName();
+
+				connector.updateIngredient(nameIngredient, increaseQTY);
+
+
+				//For updating associated label on FXML file.
+				String updateLabelQ = Integer.toString(increaseQTY);
+				System.out.println("You got to here "+updateLabelQ);//
+
+				//getting right label from map and updating the visible text (in this case a String number)
+				labelMap.get(nameIngredient).setText(updateLabelQ);;
+			}
+
+			iterator.remove(); // avoids a ConcurrentModificationException
+		}
 
 	}
 
@@ -348,7 +348,7 @@ public class LoginController implements Initializable{
 		checkBoxMap.put(orderTomato, "tomato");
 
 	}
-	
+
 	public void populateLabelQMap() {
 
 		labelMap.put("avocado", avocadoQ);
@@ -392,15 +392,50 @@ public class LoginController implements Initializable{
 	@FXML
 	public void handleRefreshButtonClick(ActionEvent event) throws IOException, JSONException{
 
-		Stage stage = (Stage)refreshBtn.getScene().getWindow();
+		System.out.println("clicked refresh button");
+		//Getting checkBoxMap in field ready for getting keys of ingredients in database.
 
-		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/managerScene.fxml"));
+		populateLabelQMap();
 
-		Scene scene = new Scene(root);
+		//Get ingredients map from database.
+		Connector connector = new Connector();
+		HashMap<String, Ingredient> databaseCurrentInventory = (HashMap<String, Ingredient>) connector.getIngredients();
 
-		stage.setScene(scene);
+		//Getting iterator to go through labelMap 
+		Iterator iterator= labelMap.entrySet().iterator();
 
-		stage.show();
+		while (iterator.hasNext()) {
+			Map.Entry pair = (Map.Entry)iterator.next();	
+			String ingredient = (String) pair.getKey();
+			System.out.println("Ingredient: "+ ingredient);
+			Label labelQ = (Label) pair.getValue();
+			
+
+			//Getting right Ingredient object from database map.
+			Ingredient databaseIngredient = databaseCurrentInventory.get(ingredient);
+
+			//Getting current quantity value inside Ingredient Object from the database.
+			int current = databaseIngredient.getQuantity();
+			System.out.println("Current QTY from database: "+ current);
+
+			//For updating associated label on FXML file.
+			String updateLabelQ = Integer.toString(current);
+			System.out.println("Update Label String: "+updateLabelQ);
+
+			//getting right label from map and updating the visible text (in this case a String number).
+			labelMap.get(ingredient).setText(updateLabelQ);
+
+		}
+
+//		Stage stage = (Stage)refreshBtn.getScene().getWindow();
+//
+//		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/managerScene.fxml"));
+//
+//		Scene scene = new Scene(root);
+//
+//		stage.setScene(scene);
+//
+//		stage.show();
 	}
 
 	@Override
