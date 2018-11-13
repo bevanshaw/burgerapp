@@ -165,7 +165,7 @@ public class LoginController implements Initializable{
 
 
 	@FXML
-	public void handleLoginButtonClick(ActionEvent event) {
+	public void handleLoginButtonClick(ActionEvent event) throws JSONException, IOException, InterruptedException {
 
 
 		String password = userPassword.getText();
@@ -196,7 +196,8 @@ public class LoginController implements Initializable{
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}			
+
 
 
 		}else if(type.equals("worker")) {
@@ -216,7 +217,8 @@ public class LoginController implements Initializable{
 			respondText.setVisible(true);
 
 		}
-
+		
+		
 	}
 
 	@FXML
@@ -260,7 +262,7 @@ public class LoginController implements Initializable{
 
 	}
 
-	public void showManagerScene() throws IOException{
+	public void showManagerScene() throws IOException, JSONException, InterruptedException{
 		Stage stage = (Stage)loginBtn.getScene().getWindow(); 
 
 		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/managerScene.fxml"));
@@ -270,6 +272,8 @@ public class LoginController implements Initializable{
 		stage.setScene(scene);
 
 		stage.show();
+	
+
 
 	}
 
@@ -370,7 +374,7 @@ public class LoginController implements Initializable{
 
 	}
 
-	public void showWorkerScene() throws IOException{
+	public void showWorkerScene() throws IOException, JSONException{
 		Stage stage = (Stage)loginBtn.getScene().getWindow();
 
 		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/worker/SceneWorker.fxml"));
@@ -380,6 +384,7 @@ public class LoginController implements Initializable{
 		stage.setScene(scene);
 
 		stage.show();
+		
 
 	}
 
@@ -392,6 +397,32 @@ public class LoginController implements Initializable{
 	@FXML
 	public void handleRefreshButtonClick(ActionEvent event) throws IOException, JSONException{
 
+		displayIngredients();
+
+//		Stage stage = (Stage)refreshBtn.getScene().getWindow();
+//
+//		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/managerScene.fxml"));
+//
+//		Scene scene = new Scene(root);
+//
+//		stage.setScene(scene);
+//
+//		stage.show();
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@FXML
+	private void goManager() {
+
+	}
+	
+	
+	public void displayIngredients() throws IOException, JSONException {
 		System.out.println("clicked refresh button");
 		//Getting checkBoxMap in field ready for getting keys of ingredients in database.
 
@@ -426,27 +457,6 @@ public class LoginController implements Initializable{
 			labelMap.get(ingredient).setText(updateLabelQ);
 
 		}
-
-//		Stage stage = (Stage)refreshBtn.getScene().getWindow();
-//
-//		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/managerScene.fxml"));
-//
-//		Scene scene = new Scene(root);
-//
-//		stage.setScene(scene);
-//
-//		stage.show();
-	}
-
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@FXML
-	private void goManager() {
-
 	}
 }
 
