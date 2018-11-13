@@ -12,11 +12,15 @@ import dataModel.Burger;
 import dataModel.Ingredient;
 import dataModel.Order;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import server.firebae.rest.Connector;
 import javafx.event.EventHandler;
 import javafx.collections.FXCollections;
@@ -36,9 +40,15 @@ public class WorkerController {
 	@FXML
 	TextArea orderDetail;
 
+	String currentOrderInv;
 	
 	@FXML
 	public void getOrders(ActionEvent event) throws IOException, JSONException {
+		
+		getOrder();
+	}
+
+	public void getOrder() throws IOException, JSONException {
 		pendingList.getItems().clear();
 		items = FXCollections.observableArrayList();
 		pendingList.setItems(items);
@@ -61,14 +71,13 @@ public class WorkerController {
 	            cell.setOnMouseClicked(e -> getDetail(cell.getItem()));
 	            return cell;
 	        });
-		
 	}
-
 
 public void getDetail(String inv) {
 	
 	orderDetail.clear();
 	orderInvTitle.setText(inv);
+	currentOrderInv = inv;
 	Order order = orderMap.get(inv); // order detail
 	List<Burger> burgers = order.getBurgers();
 	List<String> burgerList = new ArrayList<String>();
@@ -94,6 +103,42 @@ public void getDetail(String inv) {
  	  orderDetail.appendText("burger : "+ detail);
  	  orderDetail.appendText("\n");
     }
+}
+
+public void finishOrder(String inv) throws IOException {
+	Connector c = new Connector();
+	c.completeOrder(inv);
+}
+
+@FXML
+public void completeOrder(ActionEvent event) throws IOException, JSONException {
+	finishOrder(currentOrderInv);
+	getOrder();
+	orderDetail.clear();
+	orderInvTitle.clear();
+
 	
 }
+
+@FXML
+public void handleLogoutButtonClick(ActionEvent event) {
+	Stage stage = (Stage)pendingList.getScene().getWindow();
+
+	Parent root;
+	try {
+		root = FXMLLoader.load(getClass().getResource("/graphicGUI/login/loginScene.fxml"));
+		Scene scene = new Scene(root);
+
+		stage.setScene(scene);
+
+		stage.show();
+		
+		
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+
+}
+
 }

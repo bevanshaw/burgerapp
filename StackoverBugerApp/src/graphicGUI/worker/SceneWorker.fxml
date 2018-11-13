@@ -4,34 +4,49 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicGUI.worker.WorkerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #144c52;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicGUI.worker.WorkerController">
    <children>
-      <AnchorPane layoutY="92.0" prefHeight="409.0" prefWidth="246.0" style="-fx-background-color: #fbeed7;">
+      <AnchorPane layoutY="92.0" prefHeight="409.0" prefWidth="246.0" style="-fx-background-color: #144c52;">
          <children>
-            <ListView fx:id="pendingList" prefHeight="409.0" prefWidth="246.0" />
+            <ListView fx:id="pendingList" layoutX="13.0" layoutY="10.0" prefHeight="321.0" prefWidth="221.0" />
          </children>
       </AnchorPane>
-      <TextField alignment="CENTER" layoutX="14.0" layoutY="47.0" prefHeight="31.0" prefWidth="221.0" text="Pending Orders">
+      <TextField alignment="CENTER" layoutX="14.0" layoutY="48.0" prefHeight="47.0" prefWidth="221.0" text="Pending List">
          <font>
             <Font size="22.0" />
          </font>
       </TextField>
-      <TextField fx:id="orderInvTitle" alignment="CENTER" layoutX="246.0" layoutY="46.0" prefHeight="21.0" prefWidth="444.0" text="Current Orders Details">
+      <TextField fx:id="orderInvTitle" alignment="CENTER" layoutX="260.0" layoutY="48.0" prefHeight="44.0" prefWidth="415.0" text="Current Orders Details">
          <font>
             <Font size="23.0" />
          </font>
       </TextField>
       <AnchorPane layoutX="249.0" layoutY="92.0" prefHeight="347.0" prefWidth="438.0">
          <children>
-            <TextArea fx:id="orderDetail" prefHeight="347.0" prefWidth="438.0" />
+            <TextArea fx:id="orderDetail" layoutX="12.0" layoutY="8.0" prefHeight="321.0" prefWidth="415.0" />
          </children>
       </AnchorPane>
-      <Button layoutX="612.0" layoutY="10.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="75.0" text="Logout" />
-      <TextField layoutX="246.0" layoutY="444.0" prefHeight="55.0" prefWidth="455.0" />
-      <Button layoutX="573.0" layoutY="454.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="113.0" text="Complete" />
-      <Button layoutX="32.0" layoutY="10.0" mnemonicParsing="false" onAction="#getOrders" prefHeight="27.0" prefWidth="87.0" text="Get Orders" />
+      <Button layoutX="588.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleLogoutButtonClick" prefHeight="29.0" prefWidth="86.0" style="-fx-background-color: #dfd3c3;" text="Logout">
+         <font>
+            <Font size="16.0" />
+         </font></Button>
+      <Button layoutX="565.0" layoutY="443.0" mnemonicParsing="false" onAction="#completeOrder" prefHeight="35.0" prefWidth="113.0" style="-fx-background-color: #d1f6c1;" text="Complete">
+         <font>
+            <Font size="19.0" />
+         </font></Button>
+      <Button layoutX="15.0" layoutY="9.0" mnemonicParsing="false" onAction="#getOrders" prefHeight="27.0" prefWidth="113.0" style="-fx-background-color: #dfd3c3;" text="Get Orders">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <ImageView fitHeight="76.0" fitWidth="273.0" layoutX="197.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Imagen/StackOverBurger-logo-final-white%20(1).png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
