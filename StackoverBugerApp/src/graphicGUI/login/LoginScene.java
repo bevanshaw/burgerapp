@@ -66,8 +66,9 @@ public class LoginScene extends Application{
 		@Override
 		public void handle (ActionEvent event) {
 			ManagerScene managerScene = new ManagerScene();
+			
 			//call the method from another class
-			//windows.setScene(managerScene.CallthisMethod());
+			windows.setScene(managerScene.CallthisMethod());
 			managerScene.CallthisMethod();
 		}
 	});

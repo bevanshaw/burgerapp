@@ -69,7 +69,7 @@ public class Connector {
 	
 	public Map<String, Order> getOrders() throws IOException, JSONException {
 
-		String url = "https://stackover-burger.firebaseio.com/order.json?orderBy=\"status\"&equalTo=\"complete\"";
+		String url = "https://stackover-burger.firebaseio.com/order.json?orderBy=\"status\"&equalTo=\"pending\"";
 		String json = OkImp.get(url);
 		//create orders object
 		JSONObject orders =new JSONObject(json);
