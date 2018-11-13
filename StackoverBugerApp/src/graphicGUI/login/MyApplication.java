@@ -18,7 +18,7 @@ public class MyApplication  extends Application {
             // Read file fxml and draw interface.
           	//Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI.login/SceneLogin.fxml"));
             //Parent root = FXMLLoader.load(getClass().getResource("SceneLogin.fxml"));
-            AnchorPane page = (AnchorPane) FXMLLoader.load(getClass().getResource("SceneLogin.fxml"));
+            AnchorPane page = (AnchorPane) FXMLLoader.load(getClass().getResource("loginScene.fxml"));
             primaryStage.setTitle("My Application");
             //primaryStage.setScene(new Scene(root));
             primaryStage.setScene(new Scene(page));
