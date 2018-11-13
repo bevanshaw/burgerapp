@@ -2,10 +2,14 @@ package graphicGUI.login;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import org.json.JSONException;
 
+import dataModel.Ingredient;
 import graphicGUI.worker.WorkerController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -15,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -31,6 +36,9 @@ public class LoginController implements Initializable{
 	
 	@FXML
 	private Button viewKitchenBtn;
+	
+	@FXML
+	private Button addIngredientsBtn;
 
 	@FXML
 	private TextField userEmail;
@@ -43,6 +51,109 @@ public class LoginController implements Initializable{
 
 	@FXML
 	private Label respondText;
+	
+	@FXML
+	private Label sesameQ;
+	
+	@FXML
+	private Label briocheQ;
+	
+	@FXML
+	private Label beefQ;
+	
+	@FXML
+	private Label chickenQ;
+	
+	@FXML
+	private Label fishQ;
+	
+	@FXML
+	private Label falafelQ;
+	
+	@FXML
+	private Label lettuceQ;
+	
+	@FXML
+	private Label tomatoQ;
+	
+	@FXML
+	private Label pickleQ;
+	
+	@FXML
+	private Label avocadoQ;
+	
+	@FXML
+	private Label cheddarQ;
+	
+	@FXML
+	private Label camembertQ;
+	
+	@FXML
+	private Label halloumiQ;
+	
+	@FXML
+	private Label ketchupQ;
+	
+	@FXML
+	private Label mayoQ;
+	
+	@FXML
+	private Label mustardQ;
+	
+	@FXML
+	private CheckBox orderSesame;
+	
+	@FXML
+	private CheckBox orderBrioche;
+	
+	@FXML
+	private CheckBox orderBeef;
+	
+	@FXML
+	private CheckBox orderChicken;
+	
+	@FXML
+	private CheckBox orderFish;
+	
+	@FXML
+	private CheckBox orderFalafel;
+	
+	@FXML
+	private CheckBox orderLettuce;
+	
+	@FXML
+	private CheckBox orderTomato;
+	
+	@FXML
+	private CheckBox orderPickle;
+	
+	@FXML
+	private CheckBox orderAvocado;
+	
+	@FXML
+	private CheckBox orderCheddar;
+	
+	@FXML
+	private CheckBox orderCamembert;
+	
+	@FXML
+	private CheckBox orderHalloumi;
+	
+	@FXML
+	private CheckBox orderKetchup;
+	
+	@FXML
+	private CheckBox orderMayo;
+	
+	@FXML
+	private CheckBox orderMustard;
+	
+	private CheckBox[] orderArray = {orderAvocado, orderBeef, orderBrioche, orderCamembert, 
+			orderCheddar, orderChicken, orderFalafel, orderFish, 
+			orderHalloumi, orderKetchup, orderLettuce, orderMayo, 
+			orderMustard, orderPickle, orderSesame, orderTomato};
+	
+	private String[] orderLabels = {"avocado", "beef", "brioche", "camembert"};
 
 	@FXML
 	public void handleLoginButtonClick(ActionEvent event) {
@@ -159,6 +270,38 @@ public class LoginController implements Initializable{
 
 		stage.show();
 
+	}
+	
+	@FXML
+	public void handleAddIngredientsButtonClick(ActionEvent event) throws IOException, JSONException {
+//		Stage stage = (Stage)addIngredientsBtn.getScene().getWindow();
+//
+//		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/worker/SceneWorker.fxml"));
+//
+//		Scene scene = new Scene(root);
+//
+//		stage.setScene(scene);
+//
+//		stage.show();
+		
+		//Assume that list has correct database key names of each ingredient.
+		System.out.println("working");
+		Connector connector = new Connector();
+		Map<String, Ingredient> currentInventory = new HashMap<String, Ingredient>();
+		currentInventory = connector.getIngredients();
+		
+		for(int i = 0; i < orderLabels.length; i++) {
+			System.out.println(i);
+			if(orderArray[i].isSelected()) {
+				//orderArray[i].toString();
+				System.out.println(orderLabels[i]);
+			}
+			
+			
+			
+		}
+
+		
 	}
 
 	public void showWorkerScene() throws IOException{
