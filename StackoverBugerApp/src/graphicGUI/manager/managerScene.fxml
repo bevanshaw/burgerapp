@@ -18,7 +18,7 @@
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="83.0" text="Refresh">
+            <Button fx:id="refreshBtn" mnemonicParsing="false" onAction="#handleRefreshButtonClick" prefHeight="27.0" prefWidth="83.0" text="Refresh">
                <HBox.margin>
                   <Insets left="5.0" top="5.0" />
                </HBox.margin>
