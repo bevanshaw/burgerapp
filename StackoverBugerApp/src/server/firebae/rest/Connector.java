@@ -24,7 +24,7 @@ public class Connector {
 		String ingredientsUrl = "https://stackover-burger.firebaseio.com/ingredient.json";
 		
 		String ingredientsJson = OkImp.get(ingredientsUrl);
-		System.out.println(ingredientsJson);
+		//System.out.println(ingredientsJson);
 		JSONObject obj = new JSONObject(ingredientsJson);
 		
 		Iterator ingredientIter = obj.keys();
