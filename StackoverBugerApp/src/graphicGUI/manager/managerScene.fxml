@@ -10,7 +10,8 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<BorderPane prefHeight="500.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+<BorderPane prefHeight="500.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicGUI.login.LoginController">
    <top>
       <HBox prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" BorderPane.alignment="CENTER">
          <children>
@@ -23,12 +24,12 @@
                   <Insets left="5.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="99.0" text="View Kitchen">
+            <Button fx:id="viewKitchenBtn" mnemonicParsing="false" onAction="#handleViewKitchenButtonClick" prefHeight="27.0" prefWidth="99.0" text="View Kitchen">
                <HBox.margin>
                   <Insets left="5.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="61.0" text="Logout">
+            <Button fx:id="logoutBtn" mnemonicParsing="false" onAction="#handleLogoutButtonClick" prefHeight="27.0" prefWidth="61.0" text="Logout">
                <HBox.margin>
                   <Insets left="5.0" right="5.0" top="5.0" />
                </HBox.margin>

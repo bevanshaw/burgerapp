@@ -6,8 +6,7 @@ import java.util.ResourceBundle;
 
 import org.json.JSONException;
 
-import graphicGUI.manager.ManagerScene;
-import graphicGUI.worker.WorkerScene;
+import graphicGUI.worker.WorkerController;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -19,15 +18,25 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import server.firebae.rest.Connector;
 
 public class LoginController implements Initializable{
 
 	@FXML
 	private Button loginBtn;
+	
+	@FXML
+	private Button logoutBtn;
+	
+	@FXML
+	private Button viewKitchenBtn;
 
 	@FXML
 	private TextField userEmail;
+	
+	@FXML
+	private TextField quantityText;
 
 	@FXML
 	private PasswordField userPassword;
@@ -36,15 +45,15 @@ public class LoginController implements Initializable{
 	private Label respondText;
 
 	@FXML
-	public void handleButtonClick(ActionEvent event) {
+	public void handleLoginButtonClick(ActionEvent event) {
 
 		System.out.println("clicked");
 
 		//To call method from ManagerScene class create ManagerScene object
-		ManagerScene managerScene = new ManagerScene();
+		//ManagerScene managerScene = new ManagerScene();
 
 		//To call method from WorkerScene class create WorkerScene object
-		WorkerScene workerScene = new WorkerScene();
+		WorkerController workerScene = new WorkerController();
 
 
 		String password = userPassword.getText();
@@ -70,13 +79,24 @@ public class LoginController implements Initializable{
 
 			respondText.setText("");
 
-			managerScene.callManagerScene();
+			try {
+				showManagerScene();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 
 		}else if(type.equals("worker")) {
 
 			respondText.setText("");
 
-			workerScene.callWorkerScene();
+			try {
+				showWorkerScene();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 		} else if(type.equals("")) {
 
@@ -85,13 +105,83 @@ public class LoginController implements Initializable{
 
 		}
 
-		//windows.setScene(managerScene.CallthisMethod());
+	}
+	
+	@FXML
+	public void handleLogoutButtonClick(ActionEvent event) {
+		Stage stage = (Stage)logoutBtn.getScene().getWindow();
+
+		Parent root;
+		try {
+			root = FXMLLoader.load(getClass().getResource("/graphicGUI/login/loginScene.fxml"));
+			Scene scene = new Scene(root);
+
+			stage.setScene(scene);
+
+			stage.show();
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
+	/**
+	 * To allow Manager to navigate from Current Inventory to the WorkerScene.
+	 * @param event, this is a click on the view kitchen button in current inventory.
+	 * @throws IOException
+	 */
+	@FXML
+	public void handleViewKitchenButtonClick(ActionEvent event) throws IOException {
+		Stage stage = (Stage)viewKitchenBtn.getScene().getWindow();
+
+		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/worker/SceneWorker.fxml"));
+
+		Scene scene = new Scene(root);
+
+		stage.setScene(scene);
+
+		stage.show();
+
+		
+	}
+
+	public void showManagerScene() throws IOException{
+		Stage stage = (Stage)loginBtn.getScene().getWindow();
+
+		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/managerScene.fxml"));
+
+		Scene scene = new Scene(root);
+
+		stage.setScene(scene);
+
+		stage.show();
+
+	}
+
+	public void showWorkerScene() throws IOException{
+		Stage stage = (Stage)loginBtn.getScene().getWindow();
+
+		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/worker/SceneWorker.fxml"));
+
+		Scene scene = new Scene(root);
+
+		stage.setScene(scene);
+
+		stage.show();
 
 	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+
+	}
+
+	@FXML
+	private void goManager() {
 
 	}
 }
