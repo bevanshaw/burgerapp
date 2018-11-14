@@ -5,6 +5,8 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -12,9 +14,14 @@
 
 <BorderPane prefHeight="500.0" prefWidth="578.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphicGUI.login.LoginController">
    <top>
-      <HBox prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: lightgrey;" BorderPane.alignment="CENTER">
+      <HBox prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: #203a43;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" prefHeight="37.0" prefWidth="337.0" text="Current Inventory">
+            <ImageView fitHeight="49.0" fitWidth="301.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Imagen/StackOverBurger-logo-final-white%20(1).png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="37.0" prefWidth="91.0" textFill="#f5f3f3">
                <font>
                   <Font size="18.0" />
                </font></Label>
@@ -37,92 +44,124 @@
       </HBox>
    </top>
    <center>
-      <Pane prefHeight="425.0" prefWidth="775.0" style="-fx-background-color: light grey;" BorderPane.alignment="CENTER">
+      <Pane prefHeight="366.0" prefWidth="578.0" style="-fx-background-color: light grey;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="14.0" layoutY="14.0" prefHeight="28.0" prefWidth="75.0" text="Bread">
+            <Label layoutX="43.0" layoutY="51.0" prefHeight="28.0" prefWidth="75.0" text="Bread">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label id="sesameLabel" layoutX="14.0" layoutY="42.0" text="Sesame Seed Bun" />
-            <Label id="briocheLabel" layoutX="14.0" layoutY="59.0" text="Brioche Bun" />
-            <Label layoutX="14.0" layoutY="83.0" text="Patty">
+            <Label id="sesameLabel" layoutX="43.0" layoutY="85.0" text="Sesame Seed Bun" />
+            <Label id="briocheLabel" layoutX="43.0" layoutY="102.0" text="Brioche Bun" />
+            <Label layoutX="42.0" layoutY="144.0" text="Patty">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label id="beefLabel" layoutX="14.0" layoutY="106.0" text="Beef" />
-            <Label id="chickenLabel" layoutX="14.0" layoutY="123.0" prefHeight="17.0" prefWidth="54.0" text="Chicken" />
-            <Label layoutX="14.0" layoutY="140.0" text="Fish" />
-            <Label layoutX="14.0" layoutY="157.0" text="Falafel" />
-            <Label layoutX="13.0" layoutY="181.0" text="Vege">
+            <Label id="beefLabel" layoutX="43.0" layoutY="174.0" text="Beef" />
+            <Label id="chickenLabel" layoutX="43.0" layoutY="191.0" prefHeight="17.0" prefWidth="54.0" text="Chicken" />
+            <Label layoutX="43.0" layoutY="208.0" text="Fish" />
+            <Label layoutX="43.0" layoutY="225.0" text="Falafel" />
+            <Label layoutX="43.0" layoutY="255.0" text="Vege">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="13.0" layoutY="204.0" text="Lettuce" />
-            <Label layoutX="13.0" layoutY="221.0" text="Tomato" />
-            <Label layoutX="13.0" layoutY="238.0" text="Pickle" />
-            <Label layoutX="13.0" layoutY="255.0" text="Avocado" />
-            <Label layoutX="314.0" layoutY="18.0" text="Cheese">
+            <Label layoutX="43.0" layoutY="290.0" text="Lettuce" />
+            <Label layoutX="43.0" layoutY="307.0" text="Tomato" />
+            <Label layoutX="43.0" layoutY="324.0" text="Pickle" />
+            <Label layoutX="43.0" layoutY="341.0" text="Avocado" />
+            <Label layoutX="344.0" layoutY="53.0" text="Cheese">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="314.0" layoutY="43.0" text="Cheddar" />
-            <Label layoutX="314.0" layoutY="60.0" text="Camembert" />
-            <Label layoutX="314.0" layoutY="76.0" text="Halloumi" />
-            <Label layoutX="314.0" layoutY="99.0" text="Sauce">
+            <Label layoutX="342.0" layoutY="85.0" text="Cheddar" />
+            <Label layoutX="342.0" layoutY="102.0" text="Camembert" />
+            <Label layoutX="342.0" layoutY="118.0" text="Halloumi" />
+            <Label layoutX="343.0" layoutY="149.0" text="Sauce">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="314.0" layoutY="124.0" text="Ketchup" />
-            <Label layoutX="314.0" layoutY="141.0" text="Mayo" />
-            <Label layoutX="313.0" layoutY="158.0" text="Mustard" />
-            <Label id="sesameQuantity" fx:id="sesameQ" layoutX="144.0" layoutY="42.0" text="-" />
-            <Label id="briocheQuantity" fx:id="briocheQ" layoutX="144.0" layoutY="59.0" text="-" />
-            <Label id="beefQuantity" fx:id="beefQ" layoutX="144.0" layoutY="106.0" text="-" />
-            <Label id="chickenQuantity" fx:id="chickenQ" layoutX="144.0" layoutY="123.0" text="-" />
-            <Label fx:id="fishQ" layoutX="144.0" layoutY="140.0" text="-" />
-            <Label fx:id="falafelQ" layoutX="144.0" layoutY="157.0" text="-" />
-            <Label fx:id="lettuceQ" layoutX="144.0" layoutY="204.0" text="-" />
-            <Label fx:id="tomatoQ" layoutX="144.0" layoutY="221.0" text="-" />
-            <Label fx:id="pickleQ" layoutX="144.0" layoutY="238.0" text="-" />
-            <Label fx:id="avocadoQ" layoutX="144.0" layoutY="255.0" text="-" />
             <Label fx:id="cheddarQ" layoutX="438.0" layoutY="44.0" text="-" />
             <Label fx:id="camembertQ" layoutX="438.0" layoutY="61.0" text="-" />
-            <Label fx:id="halloumiQ" layoutX="438.0" layoutY="77.0" text="-" />
-            <Label fx:id="ketchupQ" layoutX="438.0" layoutY="125.0" text="-" />
-            <Label fx:id="mayoQ" layoutX="438.0" layoutY="142.0" text="-" />
-            <Label fx:id="mustardQ" layoutX="438.0" layoutY="159.0" text="-" />
-            <CheckBox fx:id="orderSesame" layoutX="170.0" layoutY="42.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="0.0" />
-            <CheckBox fx:id="orderBrioche" layoutX="170.0" layoutY="59.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderBeef" layoutX="170.0" layoutY="106.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="4.0" />
-            <CheckBox fx:id="orderChicken" layoutX="170.0" layoutY="123.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderFish" layoutX="170.0" layoutY="140.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderFalafel" layoutX="170.0" layoutY="157.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderLettuce" layoutX="170.0" layoutY="204.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderTomato" layoutX="170.0" layoutY="221.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderPickle" layoutX="170.0" layoutY="238.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderAvocado" layoutX="170.0" layoutY="255.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderCheddar" layoutX="471.0" layoutY="44.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="17.0" text="cheddar" textFill="#e5e5e5" />
-            <CheckBox fx:id="orderCamembert" layoutX="471.0" layoutY="61.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderHalloumi" layoutX="471.0" layoutY="77.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderKetchup" layoutX="471.0" layoutY="125.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderMayo" layoutX="471.0" layoutY="142.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderMustard" layoutX="471.0" layoutY="159.0" mnemonicParsing="false" />
+            <Label layoutX="343.0" layoutY="182.0" text="Ketchup" />
+            <Label layoutX="343.0" layoutY="199.0" text="Mayo" />
+            <Label layoutX="342.0" layoutY="216.0" text="Mustard" />
+            <Label id="sesameQuantity" fx:id="sesameQ" layoutX="173.0" layoutY="85.0" text="-" />
+            <Label id="briocheQuantity" fx:id="briocheQ" layoutX="173.0" layoutY="102.0" text="-" />
+            <Label id="beefQuantity" fx:id="beefQ" layoutX="173.0" layoutY="174.0" text="-" />
+            <Label id="chickenQuantity" fx:id="chickenQ" layoutX="173.0" layoutY="191.0" text="-" />
+            <Label fx:id="fishQ" layoutX="173.0" layoutY="208.0" text="-" />
+            <Label fx:id="falafelQ" layoutX="173.0" layoutY="225.0" text="-" />
+            <Label fx:id="lettuceQ" layoutX="174.0" layoutY="290.0" text="-" />
+            <Label fx:id="tomatoQ" layoutX="174.0" layoutY="307.0" text="-" />
+            <Label fx:id="pickleQ" layoutX="174.0" layoutY="324.0" text="-" />
+            <Label fx:id="avocadoQ" layoutX="174.0" layoutY="341.0" text="-" />
+            <Label fx:id="cheddarQ" layoutX="466.0" layoutY="86.0" text="-" />
+            <Label fx:id="camembertQ" layoutX="466.0" layoutY="103.0" text="-" />
+            <Label fx:id="halloumiQ" layoutX="466.0" layoutY="119.0" text="-" />
+            <Label fx:id="ketchupQ" layoutX="467.0" layoutY="183.0" text="-" />
+            <Label fx:id="mayoQ" layoutX="467.0" layoutY="200.0" text="-" />
+            <Label fx:id="mustardQ" layoutX="467.0" layoutY="217.0" text="-" />
+            <CheckBox fx:id="orderSesame" layoutX="205.0" layoutY="85.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="0.0" />
+            <CheckBox fx:id="orderBrioche" layoutX="205.0" layoutY="102.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderBeef" layoutX="204.0" layoutY="174.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="4.0" />
+            <CheckBox fx:id="orderChicken" layoutX="204.0" layoutY="191.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderFish" layoutX="204.0" layoutY="208.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderFalafel" layoutX="204.0" layoutY="225.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderLettuce" layoutX="205.0" layoutY="290.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderTomato" layoutX="205.0" layoutY="307.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderPickle" layoutX="205.0" layoutY="324.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderAvocado" layoutX="205.0" layoutY="341.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderCheddar" layoutX="504.0" layoutY="86.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="17.0" text="cheddar" textFill="#e5e5e5" />
+            <CheckBox fx:id="orderCamembert" layoutX="504.0" layoutY="103.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderHalloumi" layoutX="504.0" layoutY="119.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderKetchup" layoutX="505.0" layoutY="183.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderMayo" layoutX="505.0" layoutY="200.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderMustard" layoutX="505.0" layoutY="217.0" mnemonicParsing="false" />
+            <Label alignment="CENTER" layoutX="152.0" layoutY="3.0" prefHeight="51.0" prefWidth="275.0" text="Current Inventory">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="39.0" layoutX="98.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Imagen/bred.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="54.0" layoutX="90.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Imagen/veges.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="39.0" layoutX="412.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Imagen/cheese.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="39.0" layoutX="403.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Imagen/sauce.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="53.0" fitWidth="62.0" layoutX="91.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Imagen/paty4.png" />
+               </image>
+            </ImageView>
          </children></Pane>
    </center>
    <bottom>
-      <HBox alignment="CENTER" prefHeight="38.0" prefWidth="750.0" style="-fx-background-color: lightgrey;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="60.0" prefWidth="578.0" style="-fx-background-color: #203a43;" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="quantityText" alignment="CENTER" prefHeight="27.0" prefWidth="70.0" promptText="Quantity">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" top="5.0" />
                </HBox.margin>
             </TextField>
-            <Button fx:id="addIngredientsBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAddIngredientsButtonClick" prefHeight="27.0" prefWidth="87.0" text="Add">
+            <Button fx:id="addIngredientsBtn" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleAddIngredientsButtonClick" prefHeight="27.0" prefWidth="87.0" text="Add">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" top="5.0" />
                </HBox.margin>

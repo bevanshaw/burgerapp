@@ -20,15 +20,15 @@
       </Label>
       <HBox layoutX="50.0" layoutY="207.0" prefHeight="35.0" prefWidth="300.0" style="-fx-border-color: #BEBFC1; -fx-background-radius: 5px; -fx-border-radius: 5px;">
          <children>
-            <TextField fx:id="userEmail" alignment="CENTER" prefHeight="35.0" prefWidth="314.0" promptText="Email Address" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+            <TextField fx:id="userEmail" alignment="CENTER" prefHeight="35.0" prefWidth="314.0" promptText="Email Address" style="-fx-background-color: #fff;" HBox.hgrow="ALWAYS">
                <font>
-                  <Font size="16.0" />
+                  <Font name="Apple Braille" size="16.0" />
                </font></TextField>
          </children>
       </HBox>
       <HBox layoutX="50.0" layoutY="258.0" prefHeight="35.0" prefWidth="300.0" style="-fx-border-color: #BEBFC1; -fx-background-radius: 5px; -fx-border-radius: 5px;">
          <children>
-            <PasswordField fx:id="userPassword" alignment="CENTER" prefHeight="46.0" prefWidth="314.0" promptText="Password" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+            <PasswordField fx:id="userPassword" alignment="CENTER" prefHeight="46.0" prefWidth="314.0" promptText="Password" style="-fx-background-color: #ff;" HBox.hgrow="ALWAYS">
                <font>
                   <Font size="16.0" />
                </font></PasswordField>
