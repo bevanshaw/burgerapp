@@ -178,7 +178,7 @@ public class LoginController implements Initializable{
 
 		try {
 			type = connector.loginType(password, email);
-			System.out.println(type);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -326,7 +326,7 @@ public class LoginController implements Initializable{
 				//NOTE: Check input on this textfield can only be numbers.
 				String qtyText = quantityText.getText();
 
-				System.out.println(qtyText);
+				//System.out.println(qtyText);
 
 				int addQty = Integer.parseInt(qtyText);	
 
@@ -339,7 +339,7 @@ public class LoginController implements Initializable{
 
 				//For updating associated label on FXML file.
 				String updateLabelQ = Integer.toString(increaseQTY);
-				System.out.println("You got to here "+updateLabelQ);//
+				//System.out.println("You got to here "+updateLabelQ);//
 
 				//getting right label from map and updating the visible text (in this case a String number)
 				labelMap.get(nameIngredient).setText(updateLabelQ);;
@@ -459,7 +459,7 @@ public class LoginController implements Initializable{
 		while (iterator.hasNext()) {
 			Map.Entry pair = (Map.Entry)iterator.next();	
 			String ingredient = (String) pair.getKey();
-			System.out.println("Ingredient: "+ ingredient);
+			//System.out.println("Ingredient: "+ ingredient);
 			Label labelQ = (Label) pair.getValue();
 			
 
@@ -468,11 +468,11 @@ public class LoginController implements Initializable{
 
 			//Getting current quantity value inside Ingredient Object from the database.
 			int current = databaseIngredient.getQuantity();
-			System.out.println("Current QTY from database: "+ current);
+			//System.out.println("Current QTY from database: "+ current);
 
 			//For updating associated label on FXML file.
 			String updateLabelQ = Integer.toString(current);
-			System.out.println("Update Label String: "+updateLabelQ);
+			//System.out.println("Update Label String: "+updateLabelQ);
 
 			//getting right label from map and updating the visible text (in this case a String number).
 			labelMap.get(ingredient).setText(updateLabelQ);

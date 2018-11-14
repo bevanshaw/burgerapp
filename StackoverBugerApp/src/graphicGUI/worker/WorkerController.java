@@ -87,7 +87,7 @@ public class WorkerController {
 		List<String> burgerList = new ArrayList<String>();
 
 		int burgerNum = burgers.size();
-		System.out.println("burgerNum "+burgerNum);
+		//System.out.println("burgerNum "+burgerNum);
 		for(int i = 0; i<burgerNum; i++) {
 
 			Burger burger = burgers.get(i); // each burger
@@ -95,15 +95,15 @@ public class WorkerController {
 			String detail = "";
 			for(int j=0; j<ingredients.size(); j++) {		
 				Ingredient ing = ingredients.get(j);
-				System.out.println("ing "+ ing.getName());	
+				//System.out.println("ing "+ ing.getName());	
 				detail = detail + " " +ing.getName()+" "+ing.getQuantity();
 			}
-			System.out.println("detail "+ detail);
+			//System.out.println("detail "+ detail);
 			burgerList.add(detail);
 		}	
 
 		for(String detail: burgerList) {
-			System.out.println(detail);
+			//System.out.println(detail);
 			orderDetail.appendText("burger : "+ detail);
 			orderDetail.appendText("\n");
 		}
