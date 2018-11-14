@@ -43,7 +43,7 @@ public class LoginController implements Initializable{
 
 	@FXML
 	private Button addIngredientsBtn;
-	
+
 	@FXML
 	private TextField userEmail;
 
@@ -152,16 +152,16 @@ public class LoginController implements Initializable{
 	@FXML
 	private CheckBox orderMustard;
 
-	private CheckBox[] orderArray = {orderAvocado, orderBeef, orderBrioche, orderCamembert, 
-			orderCheddar, orderChicken, orderFalafel, orderFish, 
-			orderHalloumi, orderKetchup, orderLettuce, orderMayo, 
-			orderMustard, orderPickle, orderSesame, orderTomato};
+	//	private CheckBox[] orderArray = {orderAvocado, orderBeef, orderBrioche, orderCamembert, 
+	//			orderCheddar, orderChicken, orderFalafel, orderFish, 
+	//			orderHalloumi, orderKetchup, orderLettuce, orderMayo, 
+	//			orderMustard, orderPickle, orderSesame, orderTomato};
 
 	private Map<CheckBox, String> checkBoxMap = new HashMap<CheckBox, String>();//key = ingredient checkBox, value = ingredient name
 	private Map<String, Label> labelMap = new HashMap<String, Label>();//key = ingredient name, value = label
 	//private Map<CheckBox, Map<String,Label>> checkBoxMap = new HashMap<CheckBox, Map<String,Label>>();//key = ingredient checkBox, value = map<ingredient name(key),labelQ(value>>
 
-	private String[] orderLabels = {"avocado", "beef", "brioche", "camembert"};
+	//	private String[] orderLabels = {"avocado", "beef", "brioche", "camembert"};
 
 
 	@FXML
@@ -178,7 +178,7 @@ public class LoginController implements Initializable{
 
 		try {
 			type = connector.loginType(password, email);
-			
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -217,8 +217,8 @@ public class LoginController implements Initializable{
 			respondText.setVisible(true);
 
 		}
-		
-		
+
+
 	}
 
 	@FXML
@@ -261,27 +261,27 @@ public class LoginController implements Initializable{
 
 
 	}
-	
-//	/**
-//	 * To allow Manager to navigate from Worker Kitchen to the Inventory.
-//	 * @param event, this is a click on the view Inventory button in kitchen.
-//	 * @throws IOException
-//	 */
-//	@FXML
-//	public void handleViewInventoryButtonClick(ActionEvent event) throws IOException {
-//		
-//		Stage stage = (Stage)viewInventoryBtn.getScene().getWindow();
-//
-//		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/managerScene.fxml"));
-//
-//		Scene scene = new Scene(root);
-//
-//		stage.setScene(scene);
-//
-//		stage.show();
-//
-//
-//	}
+
+	//	/**
+	//	 * To allow Manager to navigate from Worker Kitchen to the Inventory.
+	//	 * @param event, this is a click on the view Inventory button in kitchen.
+	//	 * @throws IOException
+	//	 */
+	//	@FXML
+	//	public void handleViewInventoryButtonClick(ActionEvent event) throws IOException {
+	//		
+	//		Stage stage = (Stage)viewInventoryBtn.getScene().getWindow();
+	//
+	//		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/managerScene.fxml"));
+	//
+	//		Scene scene = new Scene(root);
+	//
+	//		stage.setScene(scene);
+	//
+	//		stage.show();
+	//
+	//
+	//	}
 
 	public void showManagerScene() throws IOException, JSONException, InterruptedException{
 		Stage stage = (Stage)loginBtn.getScene().getWindow(); 
@@ -293,7 +293,7 @@ public class LoginController implements Initializable{
 		stage.setScene(scene);
 
 		stage.show();
-	
+
 
 
 	}
@@ -326,11 +326,33 @@ public class LoginController implements Initializable{
 				//NOTE: Check input on this textfield can only be numbers.
 				String qtyText = quantityText.getText();
 
-				//System.out.println(qtyText);
-
+				qtyText = qtyText.replaceAll("[^0-9.-]", "");
+				
+				
+				if(qtyText.contains(".")) {
+				System.out.println(qtyText);
+					String[]noDecimal = qtyText.split("\\.");
+					
+					System.out.println("no decimal array: "+ noDecimal[0] + noDecimal[1]);
+					qtyText = noDecimal[0];
+					
+					//System.out.println(qtyText);
+				}
+				
+				if(qtyText.equals("")){
+					qtyText = "0";
+					quantityText.clear();
+				}
+				
 				int addQty = Integer.parseInt(qtyText);	
+				
+				//addQty = 
 
 				int increaseQTY = current + addQty;
+				
+				if (increaseQTY < 0) {
+					increaseQTY = 0;
+				}
 
 				String nameIngredient = ingredAddQty.getName();
 
@@ -342,7 +364,7 @@ public class LoginController implements Initializable{
 				//System.out.println("You got to here "+updateLabelQ);//
 
 				//getting right label from map and updating the visible text (in this case a String number)
-				labelMap.get(nameIngredient).setText(updateLabelQ);;
+				displayIngredients();
 			}
 
 			iterator.remove(); // avoids a ConcurrentModificationException
@@ -405,7 +427,7 @@ public class LoginController implements Initializable{
 		stage.setScene(scene);
 
 		stage.show();
-		
+
 
 	}
 
@@ -420,15 +442,15 @@ public class LoginController implements Initializable{
 
 		displayIngredients();
 
-//		Stage stage = (Stage)refreshBtn.getScene().getWindow();
-//
-//		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/managerScene.fxml"));
-//
-//		Scene scene = new Scene(root);
-//
-//		stage.setScene(scene);
-//
-//		stage.show();
+		//		Stage stage = (Stage)refreshBtn.getScene().getWindow();
+		//
+		//		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/managerScene.fxml"));
+		//
+		//		Scene scene = new Scene(root);
+		//
+		//		stage.setScene(scene);
+		//
+		//		stage.show();
 	}
 
 	@Override
@@ -437,12 +459,12 @@ public class LoginController implements Initializable{
 
 	}
 
-	@FXML
+
 	private void goManager() {
 
 	}
-	
-	
+
+
 	public void displayIngredients() throws IOException, JSONException {
 		System.out.println("clicked refresh button");
 		//Getting checkBoxMap in field ready for getting keys of ingredients in database.
@@ -461,7 +483,7 @@ public class LoginController implements Initializable{
 			String ingredient = (String) pair.getKey();
 			//System.out.println("Ingredient: "+ ingredient);
 			Label labelQ = (Label) pair.getValue();
-			
+
 
 			//Getting right Ingredient object from database map.
 			Ingredient databaseIngredient = databaseCurrentInventory.get(ingredient);
@@ -475,7 +497,39 @@ public class LoginController implements Initializable{
 			//System.out.println("Update Label String: "+updateLabelQ);
 
 			//getting right label from map and updating the visible text (in this case a String number).
-			labelMap.get(ingredient).setText(updateLabelQ);
+			//labelMap.get(ingredient).setText(updateLabelQ);
+
+			Label labelAdjust = labelMap.get(ingredient);
+
+			labelColour(current, updateLabelQ, labelAdjust);
+
+		}
+	}
+	/**
+	 * Method displays labels red when stock low and says out of stock if 0.
+	 * @param current
+	 * @param updateLabelQ
+	 * @param labelAdjust
+	 */
+	public void labelColour(int current, String updateLabelQ, Label labelAdjust) {
+		
+		if(current > 20) {
+			
+			//Set colour to black (in case oscillating between low and high).
+			labelAdjust.setStyle("-fx-text-fill: black");
+			labelAdjust.setText(updateLabelQ);
+
+		}else if(current > 0 && current <= 20) {
+
+			//Set colour of text to red because getting low i.e. less than 20.
+			labelAdjust.setStyle("-fx-text-fill: red");
+			labelAdjust.setText(updateLabelQ + " - REORDER");
+
+		} else if (current == 0) {
+			
+			//Add concatenated String saying out of stock.
+			labelAdjust.setStyle("-fx-text-fill: red");
+			labelAdjust.setText(updateLabelQ + " - OUT OF STOCK");
 
 		}
 	}

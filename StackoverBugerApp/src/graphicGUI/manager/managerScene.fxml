@@ -84,73 +84,48 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="cheddarQ" layoutX="438.0" layoutY="44.0" text="-" />
-            <Label fx:id="camembertQ" layoutX="438.0" layoutY="61.0" text="-" />
             <Label layoutX="343.0" layoutY="182.0" text="Ketchup" />
             <Label layoutX="343.0" layoutY="199.0" text="Mayo" />
             <Label layoutX="342.0" layoutY="216.0" text="Mustard" />
-            <Label id="sesameQuantity" fx:id="sesameQ" layoutX="173.0" layoutY="85.0" text="-" />
-            <Label id="briocheQuantity" fx:id="briocheQ" layoutX="173.0" layoutY="102.0" text="-" />
-            <Label id="beefQuantity" fx:id="beefQ" layoutX="173.0" layoutY="174.0" text="-" />
-            <Label id="chickenQuantity" fx:id="chickenQ" layoutX="173.0" layoutY="191.0" text="-" />
-            <Label fx:id="fishQ" layoutX="173.0" layoutY="208.0" text="-" />
-            <Label fx:id="falafelQ" layoutX="173.0" layoutY="225.0" text="-" />
-            <Label fx:id="lettuceQ" layoutX="174.0" layoutY="290.0" text="-" />
-            <Label fx:id="tomatoQ" layoutX="174.0" layoutY="307.0" text="-" />
-            <Label fx:id="pickleQ" layoutX="174.0" layoutY="324.0" text="-" />
-            <Label fx:id="avocadoQ" layoutX="174.0" layoutY="341.0" text="-" />
-            <Label fx:id="cheddarQ" layoutX="466.0" layoutY="86.0" text="-" />
-            <Label fx:id="camembertQ" layoutX="466.0" layoutY="103.0" text="-" />
-            <Label fx:id="halloumiQ" layoutX="466.0" layoutY="119.0" text="-" />
-            <Label fx:id="ketchupQ" layoutX="467.0" layoutY="183.0" text="-" />
-            <Label fx:id="mayoQ" layoutX="467.0" layoutY="200.0" text="-" />
-            <Label fx:id="mustardQ" layoutX="467.0" layoutY="217.0" text="-" />
-            <CheckBox fx:id="orderSesame" layoutX="205.0" layoutY="85.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="0.0" />
-            <CheckBox fx:id="orderBrioche" layoutX="205.0" layoutY="102.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderBeef" layoutX="204.0" layoutY="174.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="4.0" />
-            <CheckBox fx:id="orderChicken" layoutX="204.0" layoutY="191.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderFish" layoutX="204.0" layoutY="208.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderFalafel" layoutX="204.0" layoutY="225.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderLettuce" layoutX="205.0" layoutY="290.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderTomato" layoutX="205.0" layoutY="307.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderPickle" layoutX="205.0" layoutY="324.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderAvocado" layoutX="205.0" layoutY="341.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderCheddar" layoutX="504.0" layoutY="86.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="17.0" text="cheddar" textFill="#e5e5e5" />
-            <CheckBox fx:id="orderCamembert" layoutX="504.0" layoutY="103.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderHalloumi" layoutX="504.0" layoutY="119.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderKetchup" layoutX="505.0" layoutY="183.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderMayo" layoutX="505.0" layoutY="200.0" mnemonicParsing="false" />
-            <CheckBox fx:id="orderMustard" layoutX="505.0" layoutY="217.0" mnemonicParsing="false" />
+            <Label id="sesameQuantity" fx:id="sesameQ" layoutX="188.0" layoutY="83.0" prefWidth="100.0" text="-" />
+            <Label id="briocheQuantity" fx:id="briocheQ" layoutX="188.0" layoutY="100.0" prefWidth="100.0" text="-" />
+            <Label id="beefQuantity" fx:id="beefQ" layoutX="188.0" layoutY="172.0" prefWidth="100.0" text="-" />
+            <Label id="chickenQuantity" fx:id="chickenQ" layoutX="188.0" layoutY="189.0" prefWidth="100.0" text="-" />
+            <Label fx:id="fishQ" layoutX="188.0" layoutY="206.0" prefWidth="100.0" text="-" />
+            <Label fx:id="falafelQ" layoutX="188.0" layoutY="223.0" prefWidth="100.0" text="-" />
+            <Label fx:id="lettuceQ" layoutX="189.0" layoutY="288.0" prefWidth="100.0" text="-" />
+            <Label fx:id="tomatoQ" layoutX="189.0" layoutY="305.0" prefWidth="100.0" text="-" />
+            <Label fx:id="pickleQ" layoutX="189.0" layoutY="322.0" prefWidth="100.0" text="-" />
+            <Label fx:id="avocadoQ" layoutX="189.0" layoutY="339.0" prefWidth="100.0" text="-" />
+            <Label fx:id="cheddarQ" layoutX="470.0" layoutY="85.0" prefWidth="100.0" text="-" />
+            <Label fx:id="camembertQ" layoutX="471.0" layoutY="102.0" prefWidth="100.0" text="-" />
+            <Label fx:id="halloumiQ" layoutX="471.0" layoutY="118.0" prefWidth="100.0" text="-" />
+            <Label fx:id="ketchupQ" layoutX="472.0" layoutY="182.0" prefWidth="100.0" text="-" />
+            <Label fx:id="mayoQ" layoutX="472.0" layoutY="199.0" prefWidth="100.0" text="-" />
+            <Label fx:id="mustardQ" layoutX="472.0" layoutY="216.0" prefWidth="100.0" text="-" />
+            <CheckBox fx:id="orderSesame" layoutX="162.0" layoutY="84.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="0.0" />
+            <CheckBox fx:id="orderBrioche" layoutX="162.0" layoutY="101.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderBeef" layoutX="161.0" layoutY="173.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="4.0" />
+            <CheckBox fx:id="orderChicken" layoutX="161.0" layoutY="190.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderFish" layoutX="161.0" layoutY="207.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderFalafel" layoutX="161.0" layoutY="224.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderLettuce" layoutX="162.0" layoutY="289.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderTomato" layoutX="162.0" layoutY="306.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderPickle" layoutX="162.0" layoutY="323.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderAvocado" layoutX="162.0" layoutY="340.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderCheddar" layoutX="444.0" layoutY="86.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="17.0" textFill="#e5e5e5" />
+            <CheckBox fx:id="orderCamembert" layoutX="444.0" layoutY="103.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderHalloumi" layoutX="444.0" layoutY="119.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderKetchup" layoutX="445.0" layoutY="183.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderMayo" layoutX="445.0" layoutY="200.0" mnemonicParsing="false" />
+            <CheckBox fx:id="orderMustard" layoutX="445.0" layoutY="217.0" mnemonicParsing="false" />
             <Label alignment="CENTER" layoutX="152.0" layoutY="3.0" prefHeight="51.0" prefWidth="275.0" text="Inventory">
                <font>
                   <Font size="29.0" />
                </font>
             </Label>
-            <ImageView fitHeight="30.0" fitWidth="39.0" layoutX="98.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Imagen/bred.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="32.0" fitWidth="54.0" layoutX="90.0" layoutY="257.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Imagen/veges.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="39.0" layoutX="412.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Imagen/cheese.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="30.0" fitWidth="39.0" layoutX="403.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Imagen/sauce.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="53.0" fitWidth="62.0" layoutX="91.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../Imagen/paty4.png" />
-               </image>
-            </ImageView>
+            <Label layoutX="159.0" layoutY="57.0" text="QTY" />
+            <Label layoutX="441.0" layoutY="57.0" text="QTY" />
          </children></Pane>
    </center>
    <bottom>
@@ -161,7 +136,7 @@
                   <Insets bottom="5.0" left="5.0" top="5.0" />
                </HBox.margin>
             </TextField>
-            <Button fx:id="addIngredientsBtn" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleAddIngredientsButtonClick" prefHeight="27.0" prefWidth="87.0" text="Add">
+            <Button fx:id="addIngredientsBtn" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleAddIngredientsButtonClick" prefHeight="27.0" prefWidth="74.0" text="+/- QTY">
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" top="5.0" />
                </HBox.margin>
