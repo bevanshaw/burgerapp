@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.json.JSONException;
 
@@ -32,7 +33,7 @@ public class WorkerController {
 
 	@FXML
 	private Label label;
-	private Map<String, Order> orderMap = new HashMap<String, Order>();
+	private Map<String, Order> orderMap = new TreeMap<String, Order>();
 	@FXML
 	ListView<String> pendingList;
 	ObservableList<String> items = FXCollections.observableArrayList();

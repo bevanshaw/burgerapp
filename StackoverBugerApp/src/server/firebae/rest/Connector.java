@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,7 +18,7 @@ import dataModel.Ingredient;
 import dataModel.Order;
 public class Connector {
 	
-	Map<String, Order> orderMap = new HashMap<String, Order>();
+	Map<String, Order> orderMap = new TreeMap<String, Order>();
 	Map<String, Ingredient> ingredientMap = new HashMap<String, Ingredient>();
 
 	public Map<String, Ingredient> getIngredients() throws IOException, JSONException{
