@@ -48,7 +48,7 @@ public class Connector {
 	public void updateIngredient(String ingredientName, int number) throws IOException {
 		String url = "https://stackover-burger.firebaseio.com/ingredient/" + ingredientName+ ".json";
 		System.out.println(url);
-		String jsonFile = "{\"quantity\":\""+number+"\"}";
+		String jsonFile = "{\"quantity\":"+number+"}";
 		String test = OkImp.patch(url, jsonFile);
 		System.out.println("test "+test);
 	}
