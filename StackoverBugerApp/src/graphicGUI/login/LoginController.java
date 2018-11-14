@@ -43,7 +43,7 @@ public class LoginController implements Initializable{
 
 	@FXML
 	private Button addIngredientsBtn;
-
+	
 	@FXML
 	private TextField userEmail;
 
@@ -261,6 +261,27 @@ public class LoginController implements Initializable{
 
 
 	}
+	
+//	/**
+//	 * To allow Manager to navigate from Worker Kitchen to the Inventory.
+//	 * @param event, this is a click on the view Inventory button in kitchen.
+//	 * @throws IOException
+//	 */
+//	@FXML
+//	public void handleViewInventoryButtonClick(ActionEvent event) throws IOException {
+//		
+//		Stage stage = (Stage)viewInventoryBtn.getScene().getWindow();
+//
+//		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/managerScene.fxml"));
+//
+//		Scene scene = new Scene(root);
+//
+//		stage.setScene(scene);
+//
+//		stage.show();
+//
+//
+//	}
 
 	public void showManagerScene() throws IOException, JSONException, InterruptedException{
 		Stage stage = (Stage)loginBtn.getScene().getWindow(); 

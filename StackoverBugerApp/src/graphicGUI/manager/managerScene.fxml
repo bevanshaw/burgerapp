@@ -121,7 +121,7 @@
             <CheckBox fx:id="orderKetchup" layoutX="505.0" layoutY="183.0" mnemonicParsing="false" />
             <CheckBox fx:id="orderMayo" layoutX="505.0" layoutY="200.0" mnemonicParsing="false" />
             <CheckBox fx:id="orderMustard" layoutX="505.0" layoutY="217.0" mnemonicParsing="false" />
-            <Label alignment="CENTER" layoutX="152.0" layoutY="3.0" prefHeight="51.0" prefWidth="275.0" text="Current Inventory">
+            <Label alignment="CENTER" layoutX="152.0" layoutY="3.0" prefHeight="51.0" prefWidth="275.0" text="Inventory">
                <font>
                   <Font size="29.0" />
                </font>
