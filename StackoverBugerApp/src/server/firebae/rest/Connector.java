@@ -47,10 +47,10 @@ public class Connector {
 	// get the ingredientName and quantity to update the ingredient. 
 	public void updateIngredient(String ingredientName, int number) throws IOException {
 		String url = "https://stackover-burger.firebaseio.com/ingredient/" + ingredientName+ ".json";
-		System.out.println(url);
+		//System.out.println(url);
 		String jsonFile = "{\"quantity\":"+number+"}";
 		String test = OkImp.patch(url, jsonFile);
-		System.out.println("test "+test);
+		//System.out.println("test "+test);
 	}
 	
 
