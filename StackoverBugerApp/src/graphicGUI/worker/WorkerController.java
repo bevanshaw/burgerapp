@@ -44,6 +44,9 @@ public class WorkerController {
 	
 	@FXML
 	private Button viewInventoryBtn;
+	
+	@FXML
+	private Button getOrderBtn;
 
 	String currentOrderInv;
 
@@ -131,7 +134,7 @@ public class WorkerController {
 
 		Parent root;
 		try {
-			root = FXMLLoader.load(getClass().getResource("/graphicGUI/login/loginScene.fxml"));
+			root = FXMLLoader.load(getClass().getResource("/graphicGUI/login/LoginScene.fxml"));
 			Scene scene = new Scene(root);
 
 			stage.setScene(scene);
@@ -156,7 +159,7 @@ public class WorkerController {
 		
 		Stage stage = (Stage)viewInventoryBtn.getScene().getWindow();
 
-		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/managerScene.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI/manager/ManagerScene.fxml"));
 
 		Scene scene = new Scene(root);
 

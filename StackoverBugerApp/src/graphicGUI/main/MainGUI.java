@@ -1,4 +1,4 @@
-package graphicGUI.login;
+package graphicGUI.main;
 
 
 import javafx.application.Application;
@@ -9,17 +9,20 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
  
-public class MyApplication  extends Application {
+/**
+ *  This class has the main from which reads the fxml files and creates the graphic user interface.
+ * @author shawbeva
+ *
+ */
+public class MainGUI  extends Application {
     
   
     @Override
     public void start(Stage primaryStage) {
         try {
             // Read file fxml and draw interface.
-          	//Parent root = FXMLLoader.load(getClass().getResource("/graphicGUI.login/SceneLogin.fxml"));
-            //Parent root = FXMLLoader.load(getClass().getResource("SceneLogin.fxml"));
-            AnchorPane page = (AnchorPane) FXMLLoader.load(getClass().getResource("loginScene.fxml"));
-            primaryStage.setTitle("My Application");
+            AnchorPane page = (AnchorPane) FXMLLoader.load(getClass().getResource("/graphicGUI/login/LoginScene.fxml"));
+            primaryStage.setTitle("Stack Over Burger");
             //primaryStage.setScene(new Scene(root));
             primaryStage.setScene(new Scene(page));
             primaryStage.show();
